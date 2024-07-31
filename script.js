@@ -1,65 +1,69 @@
-const cards = document.querySelectorAll(".card");
 
-let matched = 0;
-let cardOne, cardTwo;
-let disableDeck = false;
+const guts = document.querySelector('.guts');
+const grafite = document.querySelector('.grafite');
+const vitoria = document.querySelector('.vitoria');
+let score = 0;
 
-function flipCard({target: clickedCard}) {
-    if(cardOne !== clickedCard && !disableDeck) {
-        clickedCard.classList.add("flip");
-        if(!cardOne) {
-            return cardOne = clickedCard;
-        }
-        cardTwo = clickedCard;
-        disableDeck = true;
-        let cardOneImg = cardOne.querySelector(".back-view img").src,
-        cardTwoImg = cardTwo.querySelector(".back-view img").src;
-        matchCards(cardOneImg, cardTwoImg);
-    }
-}
-
-function matchCards(img1, img2) {
-    if(img1 === img2) {
-        matched++;
-        if(matched == 8) {
-            setTimeout(() => {
-                return shuffleCard();
-            }, 1000);
-        }
-        cardOne.removeEventListener("click", flipCard);
-        cardTwo.removeEventListener("click", flipCard);
-        cardOne = cardTwo = "";
-        return disableDeck = false;
-    }
-    setTimeout(() => {
-        cardOne.classList.add("shake");
-        cardTwo.classList.add("shake");
-    }, 400);
+const pulo =() => {
+    guts.classList.add('pulo');
 
     setTimeout(() => {
-        cardOne.classList.remove("shake", "flip");
-        cardTwo.classList.remove("shake", "flip");
-        cardOne = cardTwo = "";
-        disableDeck = false;
-    }, 1200);
+        guts.classList.remove('pulo');
+        
+    }, 500);
+
 }
 
-function shuffleCard() {
-    matched = 0;
-    disableDeck = false;
-    cardOne = cardTwo = "";
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
-    arr.sort(() => Math.random() > 0.5 ? 1 : -1);
-    cards.forEach((card, i) => {
-        card.classList.remove("flip");
-        let imgTag = card.querySelector(".back-view img");
-        imgTag.src = `imagens/img-${arr[i]}.png`;
-        card.addEventListener("click", flipCard);
-    });
-}
+let grafiteCrossed = false;
 
-shuffleCard();
+const loop = setInterval(() => {
+    const grafitePosition = grafite.offsetLeft;
+    const gutsPosition = +window.getComputedStyle(guts).bottom.replace('px', '');
     
-cards.forEach(card => {
-    card.addEventListener("click", flipCard);
-});
+
+
+    if (grafitePosition <= 120 && grafitePosition>= 0 && gutsPosition < 100) {
+        grafite.style.animation = 'none';
+        grafite.style.left = `${grafitePosition}px`
+
+        guts.style.animation = 'none';
+        guts.style.bottom = `${gutsPosition}px`
+
+        guts.src = 'img/perdeu.png';
+        guts.style.width = '120px';
+        guts.style.marginLeft = '20px';
+
+
+        setTimeout(() => {
+            vitoria.src = 'img/derrota.png';
+            vitoria.style.left = 0;
+            vitoria.style.marginTop = '50px';
+            vitoria.style.marginLeft = '280px';
+            vitoria.style.width = '500px';
+        }, 500);
+       
+        clearInterval(loop);
+    }else if (grafitePosition < 0 && !grafiteCrossed) {
+        score++;
+        grafiteCrossed = true;
+        document.getElementById('score').textContent = `Score: ${score}`;
+        grafite.style.animation = 'grafite-animation 2s infinite linear';
+
+        
+        if(score === 216){
+            clearInterval(loop);
+            setTimeout(() => {
+                vitoria.style.left = 0;
+                vitoria.style.marginTop = '50px';
+                vitoria.style.marginLeft = '280px';
+                vitoria.style.width = '500px';
+                grafite.style.display = 'none';
+               
+            }, 500);
+        }
+    } else if (grafitePosition > 120) {
+        grafiteCrossed = false; 
+    }
+}, 10)
+
+document.addEventListener('keydown' , pulo);
