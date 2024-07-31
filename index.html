@@ -1,146 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">  
-    <title>Jogo da Memória de Digimon</title>
-    <link rel="stylesheet" href="estilo.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="wrapper">
-      <ul class="cards">
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-1.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-6.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-3.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-2.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-1.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-5.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-2.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-6.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-3.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-4.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-5.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-4.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-4.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-4.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-4.png" alt="card-img">
-          </div>
-        </li>
-        <li class="card">
-          <div class="view front-view">
-            <img src="imagens/que_icon.svg" alt="icon">
-          </div>
-          <div class="view back-view">
-            <img src="imagens/img-4.png" alt="card-img">
-          </div>
-        </li>
-      </ul>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>JavaScript Mario</title>
+</head>
+<body>
+    <div class="palco disp_none">
+        <img src="img/vitoria.png" class="vitoria">
+        <img src="img/nuvem.png" class="nuvem">
+        <img src="img/lixo.png" class="cano"> <!-- Vamos definir uma classe -->
+        <img src="img/fateco.gif " class="mario">
+        
+    </div> 
+
+    <div class="score disp_none">
+        <p class="tip">Faça 10 pontos para vencer.</p>
+        <p id="score">Pontuação: 0</p>
     </div>
-
-    <script src="script.js"></script>
-
-  </body>
+</body>
+<script src="js/script.js"></script>
 </html>
