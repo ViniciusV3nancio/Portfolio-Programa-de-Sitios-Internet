@@ -1,0 +1,62 @@
+html {
+	cursor: url(../imagens/mata_NyanCat.png) 30 30, auto;
+}
+
+body {
+	background-image: url(../imagens/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+
+.NyanCat1 {
+	width: 50px;
+	height: 50px;
+}
+
+.NyanCat2 {
+	width: 70px;
+	height: 70px;
+}
+
+.NyanCat3 {
+	width: 90px;
+	height: 90px;
+}
+
+.ladoA {
+	transform: scaleX(1);
+}
+
+.ladoB {
+	transform: scaleX(-1);
+}
+
+.painel {
+	position: absolute;
+	width: 190px;
+	padding: 10px;
+	left: 0px;
+	bottom: 0px;
+	border-top:solid 1px #fff;
+	background-color: #fff;
+	opacity: 0.7
+}
+
+.vidas {
+	float: left;
+}
+
+.cronometro {
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+@media (max-width:600px){
+	img.photo-game {
+		margin-top: 20vh;
+		width: 300px;
+	}
+}

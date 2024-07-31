@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="css/estilo.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+		<script src="js/game.js"></script>
+    <title>Extermiate the NyanCat</title>
+  </head>
+	<body onresize="adjustGameStageSize()">
+	
+		<div class="painel">
+			<div class="vidas">
+				<img id="v1" src="imagens/coracao_cheio.png" />
+				<img id="v2" src="imagens/coracao_cheio.png" />
+				<img id="v3" src="imagens/coracao_cheio.png" />
+			</div>
+			<div class="cronometro">Tempo restante: <span id="timer"></span></div>
+		</div>
+	
+		<script src="js/create-NyanCat.js"></script>
+	</body>
+</html>
